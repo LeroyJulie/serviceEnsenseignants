@@ -1,6 +1,9 @@
 package champollion;
 
 import org.junit.jupiter.api.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ChampollionJUnitTest {
@@ -14,7 +17,12 @@ public class ChampollionJUnitTest {
 		java = new UE("Programmation en java");		
 	}
 	
-
+        @Test
+        public void testNouvelEnseignantAvecService(){
+            untel.ajouteEnseignement(uml,0,10,0);
+                assertEquals(10,untel.heuresPrevues())
+        }
+        
 	@Test
 	public void testNouvelEnseignantSansService() {
 		assertEquals(0, untel.heuresPrevues(),
